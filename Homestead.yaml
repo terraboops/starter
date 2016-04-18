@@ -1,0 +1,27 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+hostname: starter
+name: starter
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: "./"
+      to: "/home/vagrant/starter"
+
+sites:
+    - map: hutv-server.dev
+      to: "/home/vagrant/starter/public"
+
+databases:
+    - starter
+
+variables:
+    - key: APP_ENV
+      value: local
